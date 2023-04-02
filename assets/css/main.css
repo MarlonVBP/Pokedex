@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --color-primary:#002333;
+    --color-secundary:#EDEDED;
+    --color-terciary:#159A9C;
+    --color-white:#FFF;
+    --color-black:#000000;
+}
+
+.container-fluid
+{
+    height: 100vh;
+    padding: 0;
+}
+
+.row_inputs
+{
+    height: 7vh;
+    width: 100vw;
+    background: var(--color-secundary);
+}
+
+#input_pesquisa,
+#button_pesquisa
+{
+    height: 50%;
+    border-radius: 10px;
+    font-size: .8rem;
+}
+
+#input_pesquisa
+{
+    width: 60%;
+    padding-left: 10px;
+    border: 1.4px solid var(--color-primary);
+
+}
+
+#button_pesquisa
+{
+    width: 30%;
+    background: var(--color-terciary);
+    border: none;
+    color: var(--color-white);
+    margin-left: 20px;
+}
+
+.row_informacoes
+{
+    height: 85vh;
+    background: var(--color-primary);
+    border-radius: 30px;
+    width: 100;
+}
+
+.pokemon
+{
+    flex: 0 0 93%;
+}
+
+h1,span
+{
+    color: var(--color-white);
+}
+h1
+{
+   font-size: 2em; 
+}
+
+span
+{
+    color: white;
+    font-size: 1.2em;
+}
+#nome
+{
+    text-transform: capitalize;
+}
+.dados_pokemon
+{
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+img
+{
+    width: 100px;
+    height: 100px;
+    background: var(--color-white);
+    box-shadow: 2px 2px 6px var(--color-black);
+    border-radius: 10px;
+    padding: 4px;
+}
+
+@media screen and (max-width:500px) {
+    .row_inputs_div {
+        flex-direction: column;
+    }
+
+    #button_pesquisa {
+        margin-top: 10px;
+    }
+
+    .row_inputs {
+        height: 15%;
+    }
+
+    .row_informacoes {
+        height: 90%;
+        position: absolute;
+        top: 5%;
+    }
+
+    .pokemon {
+        flex: 0 0 85%;
+    }
+}
+
+@media screen and (max-height:950px) {
+    .row_informacoes {
+        height: 120%;
+        position: absolute;
+        top: 5%;
+    }
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link CSS boostrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <!-- fim do link -->
+    <!-- Link do meu CSS personalizado -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <title>Pokedex</title>
+</head>
+
+<body>
+    <div class="container-fluid d-flex flex-column">
+        <div class="row_inputs d-flex justify-content-center align-items-center">
+            <div class="row_inputs_div col-xl-6 col-lg-8 col-sm-10 d-flex justify-content-center align-items-center">
+                <input type="text" id="input_pesquisa" class="form-control" placeholder="Digite um nome de pokémon">
+                <button type="button" id="button_pesquisa" class="btn btn-info">Buscar</button>
+            </div>
+        </div>
+        <div class="pokemon col-12 d-flex align-items-center justify-content-center">
+            <div class="row row_informacoes flex-column justify-content-center align-items-center col-xl-6 col-lg-8 col-sm-10">
+                <div class="dados_pokemon">
+                    <h1 id="nome" class="nome">desconhecido</h1>
+                    <img src="assets/imagens/pokemon-g4d28e9f6b_640.jpg" class="img-fluid" id="img_poke"
+                        alt="img_from_pokeApi">
+                </div>
+                <div class="dados_pokemon">
+                    <h1>Habilidades</h1>
+                    <span id="habilidade"></span>
+                </div>
+                <div class="dados_pokemon">
+                    <h1>Formas</h1>
+                    <span id="formas"></span>
+                </div>
+                <div class="dados_pokemon">
+                    <h1>Espécies</h1>
+                    <span id="especie"></span>
+                </div>
+                <div class="dados_pokemon">
+                    <h1>Tipos</h1>
+                    <span id="tipo"></span>
+                </div>
+                <div class="dados_pokemon">
+                    <h1>Experiência</h1>
+                    <span id="experiencia"></span>
+                </div>
+                <div class="dados_pokemon">
+                    <h1>Altura</h1>
+                    <span id="altura"></span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Link JS boostrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <!-- fim do link -->
+    <!-- Link do meu JS personalizado -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
