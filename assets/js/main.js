@@ -2,6 +2,15 @@
 const buttom_pesquisa = document.getElementById('button_pesquisa');
 
 buttom_pesquisa.addEventListener('click', () => {
+    iniciar();
+})
+document.addEventListener('keydown', (e) => {
+    if (e.key == 'Enter') {
+        iniciar();
+    }
+});
+
+function iniciar() {
     // Chamando elementos do HTML
     const img = document.getElementById('img_poke');
     const nome = document.getElementById('nome');
@@ -13,13 +22,14 @@ buttom_pesquisa.addEventListener('click', () => {
     const altura = document.getElementById('altura');
 
     // Pegando o valor do input
-    const pokemom = document.getElementById('input_pesquisa').value;
+    const pokemom = document.getElementById('input_pesquisa').value.toLowerCase();
     const url = `https://pokeapi.co/api/v2/pokemon/${pokemom}`;
     // Chamndo API
     async function getItem(url) {
         fetch(url)
             .then(response => response.json())
             .then(dados => {
+                console.log(dados);
                 nome.innerText = `${dados['name']}`
                 for (let i = 0, valido = `${dados['abilities']['length']}`; i < valido; i++) {
                     habilidade.innerHTML += `${dados['abilities'][i]['ability']['name']}<br>`
@@ -29,14 +39,16 @@ buttom_pesquisa.addEventListener('click', () => {
                 for (let i = 0, valido = `${dados['types']['length']}`; i < valido; i++) {
                     tipo.innerHTML += `${dados['types'][i]['type']['name']}<br>`
                 }
-                img.setAttribute('src', `${dados['sprites']['versions']['generation-v']['black-white']['animated']['front_default']}`);
+                img.setAttribute('src', `${dados['sprites']['versions']['generation-v']['black-white']['animated'][`front_default`]}`);
                 experiencia.innerText = `${dados['base_experience']}`;
                 altura.innerText = `${dados['height']}`
+                // Limpando o input
+                document.getElementById('input_pesquisa').value = '';
             })
             .catch(_ => { console.log(_) })
             .finally(() => { console.log('Processo finalizado!') });
     }
-    getItem(url)    
+    getItem(url)
 
     // Limpando os spans
     img.setAttribute('src', 'assets/imagens/pokemon-g4d28e9f6b_640.jpg');
@@ -44,6 +56,8 @@ buttom_pesquisa.addEventListener('click', () => {
     habilidade.innerText = ''
     forma.innerText = ''
     tipo.innerText = ''
+    especie.innerText = ''
     experiencia.innerText = ''
     altura.innerText = ''
-})
+
+}
