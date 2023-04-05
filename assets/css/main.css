@@ -134,12 +134,21 @@ img {
     .pokemon {
         flex: 0 0 85%;
     }
+
     h1 {
         font-size: 1.5em;
     }
-    
+
     span {
         font-size: 1em;
+    }
+
+    #input_pesquisa {
+        width: 100%;
+    }
+
+    #button_pesquisa {
+        width: 50%;
     }
 }
 
@@ -147,9 +156,11 @@ img {
     h1 {
         font-size: 1em;
     }
+
     span {
         font-size: 0.8em;
     }
+
     img {
         width: 80px;
         height: 80px;
