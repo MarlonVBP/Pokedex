@@ -27,20 +27,22 @@
 }
 
 #input_pesquisa,
-#button_pesquisa {
+#button_pesquisa,
+#button_show_modal {
     height: 50%;
     border-radius: 10px;
     font-size: .8rem;
 }
 
 #input_pesquisa {
-    width: 60%;
+    width: 50%;
     padding-left: 10px;
     border: 1.4px solid var(--color-primary);
 }
 
-#button_pesquisa {
-    width: 30%;
+#button_pesquisa,
+#button_show_modal {
+    width: 100%;
     background: var(--color-terciary);
     border: 1px solid rgb(13, 76, 92);
     color: var(--color-white);
@@ -49,7 +51,16 @@
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.521);
 }
 
+#button_show_modal {
+    width: 100%;
+}
+
 #button_pesquisa:hover {
+    transform: scale(1.05);
+    transition: .5s;
+}
+
+#button_show_modal:hover {
     transform: scale(1.05);
     transition: .5s;
 }
@@ -108,6 +119,66 @@ img {
     padding: 4px;
 }
 
+.list_pokemon_modal {
+    z-index: 3;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    justify-content: start;
+    align-items: center;
+    color: white;
+    font-size: 3rem;
+    flex-direction: column;
+    padding: 15px;
+    padding-top: 20%;
+}
+
+#list_pokemon {
+    margin-right: 10px;
+    font-size: 2rem;
+    height: 100px;
+}
+
+#button_pesquisar_modal {
+    padding: 5px;
+}
+
+.option,
+#button_pesquisar_modal,
+#list_pokemon {
+    height: 100px;
+    border-radius: 15px;
+    transition: .4s;
+    background: #ffffff;
+    border: 3px solid black;
+    text-align: center;
+}
+
+#list_pokemon:hover {
+    transform: scale(1.03);
+}
+
+#button_pesquisar_modal:hover {
+    transform: scale(1.03);
+}
+
+
+.list_pokemon_modal.show {
+    display: flex;
+}
+
+#button_show_modal.show{
+    display: flex;
+}
+
+#button_show_modal{
+    display: none;
+}
+
 @media screen and (max-width:500px) {
     .container-fluid {
         background-image: url('');
@@ -118,6 +189,9 @@ img {
     }
 
     #button_pesquisa {
+        margin-left: 5px;
+    }
+    button{
         margin-top: 10px;
     }
 
@@ -147,8 +221,27 @@ img {
         width: 100%;
     }
 
-    #button_pesquisa {
+    #button_pesquisa,
+    #button_pesquisar_modal,
+    #button_show_modal {
         width: 50%;
+    }
+
+    .option,
+    #button_pesquisar_modal,
+    #list_pokemon {
+        height: 70px;
+        font-size: 2rem;
+    }
+
+    .list_pokemon_modal {
+        justify-content: flex-start;
+    }
+
+    .container_opcoes {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 }
 
